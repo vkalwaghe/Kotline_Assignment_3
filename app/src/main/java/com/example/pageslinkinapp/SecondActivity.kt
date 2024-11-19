@@ -1,6 +1,7 @@
 package com.example.pageslinkinapp
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,12 +10,13 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class SecondActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
         val tvDisplay: TextView = findViewById(R.id.tv_display_data)
-        val btnNext: Button = findViewById(R.id.btn_next)
+        val btnNext: Button = findViewById(R.id.button)
 
         // Retrieve data from Intent
         val string1 = intent.getStringExtra("string1") ?: ""
